@@ -25,3 +25,24 @@ SELECT FebSales.Product, SUM(FebSales.Quantity) as Quantity, location
 FROM BIT_DB.FebSales
 WHERE location LIKE '%los Angeles%'
 GROUP BY Product;
+
+
+/*How many of each type of headphone were sold in February?*/
+SELECT FebSales.Product, SUM(FebSales.Quantity) as Quantity
+FROM BIT_DB.FebSales
+WHERE Product LIKE '%Headphones%'
+GROUP BY Product;
+
+
+/*What was the average amount spent per account in February? (For this question, we want the average amount spent / number of accounts, not the amount spent by each account).*/
+SELECT SUM(FebSales.price*FebSales.Quantity)/COUNT(customers.acctnum) 
+FROM BIT_DB.FebSales
+LEFT JOIN BIT_DB.customers
+ON FebSales.orderID = customers.order_id;
+
+
+/*What was the average quantity of products purchased per account in February?*/
+SELECT SUM(FebSales.Quantity)/COUNT(customers.acctnum)
+FROM BIT_DB.FebSales
+LEFT JOIN BIT_DB.customers
+ON FebSales.orderID = customers.order_id;
