@@ -18,3 +18,10 @@ SELECT product, sum(quantity)*price as revenue
 FROM BIT_DB.JanSales
 GROUP BY product
 order by revenue DESC
+
+/*Which locations in New York received at least 3 orders in January, and how many orders did they each receive?*/
+SELECT DISTINCT JanSales.location, COUNT(JanSales.orderID) AS orders
+FROM BIT_DB.JanSales
+WHERE location LIKE '%NY%'
+GROUP BY location
+HAVING orders>2
