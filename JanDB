@@ -1,0 +1,20 @@
+/*How many orders were placed in January? */
+SELECT COUNT(JanSales.orderID)
+FROM BIT_DB.JanSales;
+
+/*How many of those orders were for an iPhone? */
+SELECT COUNT(orderID)
+FROM BIT_DB.JanSales
+WHERE Product = 'iPhone';
+
+/*hich product was the cheapest one sold in January, and what was the price?*/
+SELECT DISTINCT Product, MIN(price) 
+FROM BIT_DB.JanSales
+GROUP BY product, price
+ORDER BY price ASC LIMIT 1;
+
+/*What is the total revenue for each product sold in January?*/
+SELECT product, sum(quantity)*price as revenue
+FROM BIT_DB.JanSales
+GROUP BY product
+order by revenue DESC

@@ -1,0 +1,19 @@
+/*Select the customer account numbers for all the orders that were placed in February.*/
+SELECT customers.acctnum
+FROM BIT_DB.customers 
+INNER JOIN BIT_DB.FebSales 
+ON customers.order_id= FebSales.orderID
+
+/* Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?*/
+SELECT SUM(Quantity), Product, SUM(Quantity)*price AS revenue
+FROM BIT_DB.FebSales
+WHERE location = "548 Lincoln St, Seattle, WA 98101"
+GROUP BY product;
+
+
+/*How many customers ordered more than 2 products at a time, and what was the average amount spent for those customers? */
+SELECT COUNT(customers.acctnum), AVG(FebSales.Quantity)*FebSales.price as Average_spent
+FROM BIT_DB.FebSales
+LEFT JOIN BIT_DB.customers
+ON FebSales.orderID = customers.order_id
+WHERE FebSales.Quantity > 2;
