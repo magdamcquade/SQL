@@ -7,7 +7,7 @@ SELECT COUNT(orderID)
 FROM BIT_DB.JanSales
 WHERE Product = 'iPhone';
 
-/*hich product was the cheapest one sold in January, and what was the price?*/
+/*Which product was the cheapest one sold in January, and what was the price?*/
 SELECT DISTINCT Product, MIN(price) 
 FROM BIT_DB.JanSales
 GROUP BY product, price
