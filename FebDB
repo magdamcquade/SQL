@@ -4,6 +4,7 @@ FROM BIT_DB.customers
 INNER JOIN BIT_DB.FebSales 
 ON customers.order_id= FebSales.orderID
 
+
 /* Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?*/
 SELECT SUM(Quantity), Product, SUM(Quantity)*price AS revenue
 FROM BIT_DB.FebSales
@@ -17,3 +18,10 @@ FROM BIT_DB.FebSales
 LEFT JOIN BIT_DB.customers
 ON FebSales.orderID = customers.order_id
 WHERE FebSales.Quantity > 2;
+
+
+/*List all the products sold in Los Angeles in February, and include how many of each were sold.*/
+SELECT FebSales.Product, SUM(FebSales.Quantity) as Quantity, location
+FROM BIT_DB.FebSales
+WHERE location LIKE '%los Angeles%'
+GROUP BY Product;
