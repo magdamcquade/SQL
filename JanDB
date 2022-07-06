@@ -17,11 +17,18 @@ ORDER BY price ASC LIMIT 1;
 SELECT product, sum(quantity)*price as revenue
 FROM BIT_DB.JanSales
 GROUP BY product
-order by revenue DESC
+order by revenue DESC;
 
 /*Which locations in New York received at least 3 orders in January, and how many orders did they each receive?*/
 SELECT DISTINCT JanSales.location, COUNT(JanSales.orderID) AS orders
 FROM BIT_DB.JanSales
 WHERE location LIKE '%NY%'
 GROUP BY location
-HAVING orders>2
+HAVING orders>2;
+
+/*Which product brought in the most revenue in January and how much revenue did it bring in total?*/
+SELECT JanSales.Product, SUM(JanSales.Quantity*JanSales.price) as revenue
+FROM BIT_DB.JanSales
+GROUP BY Product
+ORDER BY revenue DESC
+LIMIT 1;
