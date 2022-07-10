@@ -1,0 +1,65 @@
+/*CREATE TABLE*/
+CREATE TABLE BIT_DB.Spotifydata (
+ID INTEGER KEY,
+artist_name VARCHAR NOT NULL,
+track_name  VARCHAR NOT NULL,
+track_id  VARCHAR NOT NULL,
+popularity INTEGER NOT NULL,
+danceability DECIMAL(4,3) NOT NULL,
+energy DECIMAL(4,3) NOT NULL,
+key INTEGER NOT NULL,
+loudness DECIMAL(5,3) NOT NULL,
+mode INTEGER NOT NULL,
+speechines DECIMAL(5,4) NOT NULL,
+acousticness DECIMAL(6,5) NOT NULL,
+instrumentalness TEXT NOT NULL,
+liveness DECIMAL(5,4) NOT NULL,
+valence DECIMAL(4,3) NOT NULL,
+tempo DECIMAL(6,3) NOT NULL,
+duration_ms INTEGER NOT NULL,
+time_signature INTEGER NOT NULL);
+
+/*IMPORT DATA*/
+
+/*Sort playlists energy according to "vibe"*/
+SELECT ID, artist_name, track_name, popularity, energy, 
+      CASE 
+      WHEN energy >= 0.800 THEN "Party music"
+      WHEN energy <0.800>= 0.550 THEN "BBQ music"
+      ELSE "Chill music"
+      END AS 'vibe'
+      FROM BIT_DB.Spotifydata
+      ORDER BY popularity DESC;
+
+/*Sort playlists according to "mood"*/  
+SELECT artist_name, track_name, valence FROM BIT_DB.Spotifydata
+      WHERE valence > 0.7
+      ORDER BY valence  DESC; 
+SELECT artist_name, track_name, valence FROM BIT_DB.Spotifydata
+      WHERE valence < 0.7
+      ORDER BY valence ASC; 
+
+/*Select Max, Min, Avg tempo from Spotifydata*/
+SELECT artist_name, track_name, MAX(tempo) FROM BIT_DB.Spotifydata;
+SELECT artist_name, track_name, MIN(tempo) FROM BIT_DB.Spotifydata;
+SELECT AVG(tempo) FROM BIT_DB.Spotifydata;
+
+/*Select data with mode = 1 */
+SELECT COUNT(mode) AS Mode , track_name AS title
+      FROM BIT_DB.Spotifydata
+      GROUP BY track_name 
+      HAVING COUNT(mode) >= 1;
+      
+/*Select duration > 16700 , loudness >= -4.601 from Spotifydata*/
+SELECT artist_name, track_name, duration_ms, loudness 
+      FROM BIT_DB.Spotifydata
+      WHERE duration_ms > 16700 and loudness >= -4.601
+      ORDER BY duration_ms DESC;
+      
+/* Find all songs from artists "Olivia" and check their popularity*/       
+SELECT track_name, popularity
+      FROM BIT_DB.Spotifydata
+      WHERE artist_name LIKE "%Olivia%";
+      
+      
+
