@@ -5,7 +5,7 @@
 | CODE          |  VARCHAR2 (3) |             | ID          | NUMBER     |
 | NAME          |  VARCHAR2 (44)|             | NAME        | VARCHAR(17)|
 | CONTINENT     |  VARCHAR2 (13)|             | COUNTRCODE  | VARCHAR(2) |
-| REGION        |  VARCHAR2 (25)|             | DISTRIC     | VARCHAR(20)|
+| REGION        |  VARCHAR2 (25)|             | DISTRICT    | VARCHAR(20)|
 | SURFACEAREA   |  NUMBER       |             | POPULATION  | NUMBER     |
 | INDEPYEAR     |  VARCHAR2 (5) |             +-------------+------------+ 
 | POPULATION    |  NUMBER       |
