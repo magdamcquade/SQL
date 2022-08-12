@@ -1,0 +1,24 @@
+CREATE TABLE Shoe_Factory (ID INTEGER PRIMARY KEY, brand TEXT, model TEXT, color TEXT, size INTEGER, price INTEGER, aisle INTEGER);
+
+INSERT INTO Shoe_Factory VALUES (1, 'Nike', 'Air Force 1', 'white', 8, 110, 5);
+INSERT INTO Shoe_Factory VALUES (2, 'Adidas', 'Questar Flow NXT', 'core black', 11, 45, 5);
+INSERT INTO Shoe_Factory VALUES (3, 'Converse', 'Chuck Taylor All Star', 'optical white', 9, 35, 4);
+INSERT INTO Shoe_Factory VALUES (4, 'Reebok', 'Club C Vintage', 'white', 7, 76, 5);
+INSERT INTO Shoe_Factory VALUES (5, 'New Balance', '574 Core', 'nimbus cloud with white', 8, 85, 5);
+INSERT INTO Shoe_Factory VALUES (6, 'Vans', 'Old Skool', 'parisian night/true white', 6, 85, 4);
+INSERT INTO Shoe_Factory VALUES (7, 'Puma', 'Smash Platform v2 Candy', 'white-lavender fog', 8, 34, 6);
+INSERT INTO Shoe_Factory VALUES (8, 'Jordan', 'Air Jordan 1 MID', 'blue mint', 11, 125, 2);
+INSERT INTO Shoe_Factory VALUES (9, 'On', 'Cloudnova', 'white', 8, 160, 2);
+INSERT INTO Shoe_Factory VALUES (10, 'Beckett Simonon', 'Morgen Trainers', 'white/blue/gum', 10, 159, 7);
+INSERT INTO Shoe_Factory VALUES (11, 'Magnanni', 'Carrie Monk-Strap Leather', 'cognac', 11, 450, 8);
+INSERT INTO Shoe_Factory VALUES (12, 'Ted Baker', 'Retro Suete Leather Mix', 'white', 8, 170, 9);
+INSERT INTO Shoe_Factory VALUES (13, 'Clae', 'Malone Lite', 'smoke suede green banana', 9, 129, 7);
+INSERT INTO Shoe_Factory VALUES (14, 'Banana Republic', 'Treccia Sandal', 'black', 6, 75, 1);
+INSERT INTO Shoe_Factory VALUES (15, 'Liberte Leather', 'Brante Sandal', 'black', 8, 119, 1);
+
+SELECT * FROM Shoe_Factory ORDER BY price DESC;
+SELECT * FROM Shoe_Factory WHERE color LIKE '%white%' and price < 150;
+SELECT * FROM Shoe_Factory WHERE aisle = 2 OR aisle = 7 ; 
+SELECT brand, model, MAX(price) FROM Shoe_Factory;
+SELECT brand, model, MIN(price) FROM Shoe_Factory;
+SELECT brand, price, color FROM Shoe_Factory WHERE brand = 'Nike' OR brand = 'Vans' OR brand = 'Ted Baker'; 
