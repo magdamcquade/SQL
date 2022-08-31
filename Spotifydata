@@ -59,7 +59,7 @@ SELECT artist_name, track_name, duration_ms, loudness
 /* Find all songs from artists "Olivia" and check their popularity*/       
 SELECT track_name, popularity
       FROM BIT_DB.Spotifydata
-      WHERE artist_name LIKE "%Olivia%";
+      WHERE artist_name LIKE "%Olivia%"; 
       
       
 
