@@ -1,7 +1,7 @@
           Employee
 +-------------+------------+
 | Column      |   Type     |
-+-------------+------------+
++-------------+------------+ 
 | employee_id | INTEGER    |
 | name        | STRING     |
 | months      | INTEGER    |
