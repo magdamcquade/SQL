@@ -7,7 +7,7 @@
 | CONTINENT     |  VARCHAR2 (13)|             | COUNTRCODE  | VARCHAR(2) |
 | REGION        |  VARCHAR2 (25)|             | DISTRICT    | VARCHAR(20)|
 | SURFACEAREA   |  NUMBER       |             | POPULATION  | NUMBER     |
-| INDEPYEAR     |  VARCHAR2 (5) |             +-------------+------------+    
+| INDEPYEAR     |  VARCHAR2 (5) |             +-------------+------------+      
 | POPULATION    |  NUMBER       |
 | LIFEEXPECTANCY|  VARCHAR2 (4) |
 | GNP           |  NUMBER       |
