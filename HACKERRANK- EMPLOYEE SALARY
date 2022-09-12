@@ -3,7 +3,7 @@
 | Column      |   Type     |
 +-------------+------------+ 
 | employee_id | INTEGER    |
-| name        | STRING     |
+| name        | STRING     | 
 | months      | INTEGER    |
 | salary      | INTEGER    | 
 +-------------+------------+
