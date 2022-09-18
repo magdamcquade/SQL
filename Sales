@@ -46,3 +46,38 @@ SELECT SUM(FebSales.Quantity)/COUNT(customers.acctnum)
 FROM BIT_DB.FebSales
 LEFT JOIN BIT_DB.customers
 ON FebSales.orderID = customers.order_id;
+
+/*How many orders were placed in January? */
+SELECT COUNT(JanSales.orderID)
+FROM BIT_DB.JanSales;
+
+/*How many of those orders were for an iPhone? */
+SELECT COUNT(orderID)
+FROM BIT_DB.JanSales
+WHERE Product = 'iPhone';
+
+/*Which product was the cheapest one sold in January, and what was the price?*/
+SELECT DISTINCT Product, MIN(price) 
+FROM BIT_DB.JanSales
+GROUP BY product, price
+ORDER BY price ASC LIMIT 1;
+
+/*What is the total revenue for each product sold in January?*/
+SELECT product, sum(quantity)*price as revenue
+FROM BIT_DB.JanSales
+GROUP BY product
+order by revenue DESC;
+
+/*Which locations in New York received at least 3 orders in January, and how many orders did they each receive?*/
+SELECT DISTINCT JanSales.location, COUNT(JanSales.orderID) AS orders
+FROM BIT_DB.JanSales
+WHERE location LIKE '%NY%'
+GROUP BY location
+HAVING orders>2;
+
+/*Which product brought in the most revenue in January and how much revenue did it bring in total?*/
+SELECT JanSales.Product, SUM(JanSales.Quantity*JanSales.price) as revenue
+FROM BIT_DB.JanSales
+GROUP BY Product
+ORDER BY revenue DESC
+LIMIT 1;
