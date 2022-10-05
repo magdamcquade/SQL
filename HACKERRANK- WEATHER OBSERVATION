@@ -4,7 +4,7 @@
 +-------------+------------+ 
 | ID          | INTEGER    |
 | CITY        | VARCHAR(21)|
-| STATE       | VARCHAR(2) |
+| STATE       | VARCHAR(2) | 
 | LAT_N       | NUMERIC    |   
 | LONG_W      | NUMERIC    |   
 +-------------+------------+
