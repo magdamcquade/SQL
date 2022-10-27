@@ -18,7 +18,7 @@ SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;
 
  
 /*Query a list of CITY names from STATION for cities that have an even ID number.*/
-SELECT DISTINCT CITY FROM STATION WHERE ID % 2=0
+SELECT DISTINCT CITY FROM STATION WHERE ID % 2=0 
 
 
 /*Query the following two values from the STATION table:
