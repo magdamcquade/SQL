@@ -17,7 +17,7 @@
 | HEADOFSTATE   |  VARCHAR2 (32)|
 | CAPITAL       |  VARCHAR2 (4) |
 | CODE2         |  VARCHAR2 (2) |
-+---------------+---------------+
++---------------+---------------+ 
 
 
 /*Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
