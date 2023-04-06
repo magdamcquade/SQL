@@ -15,7 +15,7 @@ SELECT CITY, STATE FROM STATION;
 
 /*Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.*/
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;          
-
+ 
  
 /*Query a list of CITY names from STATION for cities that have an even ID number.*/
 SELECT DISTINCT CITY FROM STATION WHERE ID % 2=0 
