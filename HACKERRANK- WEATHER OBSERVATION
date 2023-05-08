@@ -1,6 +1,6 @@
           STATION
 +-------------+------------+
-| Field       |   Type     |
+| Field       |   Type     |  
 +-------------+------------+ 
 | ID          | INTEGER    |
 | CITY        | VARCHAR(21)|
