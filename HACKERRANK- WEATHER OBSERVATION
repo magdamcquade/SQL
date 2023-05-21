@@ -76,7 +76,7 @@ WHERE RIGHT(CITY,1) IN ('a', 'e', 'i', 'o', 'u');
 SELECT DISTINCT city
 FROM   station
 WHERE  city RLIKE '^[aeiouAEIOU].*[aeiouAEIOU]$';
- 
+  
  
 /*Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.*/
 SELECT DISTINCT CITY FROM STATION WHERE CITY NOT RLIKE '^[aeiouAEIOU].*$';
