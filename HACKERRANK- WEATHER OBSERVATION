@@ -2,7 +2,7 @@
 +-------------+------------+
 | Field       |   Type     |  
 +-------------+------------+  
-| ID          | INTEGER    | 
+| ID          | INTEGER    |  
 | CITY        | VARCHAR(21)|
 | STATE       | VARCHAR(2) |    
 | LAT_N       | NUMERIC    |      
